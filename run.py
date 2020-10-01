@@ -112,13 +112,13 @@ banner = """
 ██║   ██║████╔╝██║██╔═══╝ ██╔══██║  ╚██╔╝  
 ╚██████╔╝╚██████╔╝██║     ██║  ██║   ██║   
  ╚═════╝  ╚═════╝ ╚═╝     ╚═╝  ╚═╝   ╚═╝   
-            Accounts Manager                                   
-           @author: corrykalam
+            Accounts Gopay Manager                                   
+             @author: corrykalam
 """
 menu = """
 [1] Check Balance
-[2] Send Rp.1
-[3] Send Rp.1 (Mass Sender)
+[2] Send GoPay Rp.1
+[3] Send GoPay Rp.1 (Mass Sender)
 [4] Send other amount
 [5] Send other amount (Mass Sender)
 [6] Change pin account (Only change json)
@@ -180,7 +180,7 @@ else:
                 no += 1
                 username += "[%s]%s \n"%(str(no), anjay)
         print(username)
-        accounts_enter = input('Select accounts: ')
+        accounts_enter = input('Select GoPay accounts: ')
         if int(accounts_enter) < len(config)+1:
             token = ""
             pin = ""
@@ -206,7 +206,7 @@ else:
                 no += 1
                 username += "[%s]%s \n"%(str(no), anjay)
         print(username)
-        accounts_enter = input('Select accounts: ')
+        accounts_enter = input('Select your accounts: ')
         if int(accounts_enter) < len(config)+1:
             token = ""
             pin = ""
@@ -218,7 +218,7 @@ else:
         else:
             print("Accounts not found!")
             sys.exit(0)
-        number_logx = input('Number to send Rp.1 Mass (Delimiter `,`): ')
+        number_logx = input('Number GoPay to send Rp.1 Mass (Delimiter `,`): ')
         for numbermass in number_logx.split(","):
             wallet_logx = checkWalletCode(numbermass, token, unique)
             if wallet_logx == False:
@@ -330,13 +330,13 @@ else:
         if int(accounts_enter) < len(config)+1:
             del config[int(accounts_enter)-1]
             backupConfig()
-            print("Success delete accounts!")
+            print("Success deleting accounts!")
             restart()
         else:
             print("Accounts not found!")
             sys.exit(0)
     elif menu_log == "0":
-        print("Thank you for use tool ^_^")
+        print("Thank you for use tool, keep support me ^_^")
         sys.exit(0)
     else:
         print("Index out of range!")
